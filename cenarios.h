@@ -669,6 +669,17 @@ void cidade(){
                                     printf("|| %d de sorte.\n",sor);
                                     printf("||\t\tVc teria um missao secundaria aqui maaas\n||\t\tVc ta numa DEMO, entao nao tem nada aqui :)");
                                     fini();
+
+                                    do{
+                                    ini();
+                                    printf("||\t\t\tO que decide fazer?\n");
+                                    printf("||\t2 - Tentar falar com o cara cortando a lenha.\n||\t3 - Andar um pouco pelo vilarejo.");
+                                    fini();
+                                    scanf(" %d", &opc);
+                                    ("pause");
+                                    system("cls");
+                                    }while(opc<2||opc>3);
+                                    
                                     break;
                                 }
                     
@@ -678,25 +689,54 @@ void cidade(){
                 // SER RUDE COM AS CRIANÇAS.
                     case 2 :
                         ini();
-                        printf("||\t\t");
+                        printf("||\t\tVC E UMA PECIMA PESSOA. SAI DAQUI!");
                         fini();
+                        exit(0);
                     break;
                 }
 
             case 2 : 
                 //Falar com o lenhador.
                 ini();
-
+                printf("\t\tO lenhador se assuta com vc e no susto\n||\tEle te da uma maxadada na cabeca... vc morre.");
                 fini();
-
+                exit(0);
                 break;
 
             case 3 : 
                 //Andar pela vila.
                 ini();
-
+                printf("||\t\tUm boi furioso aparece do nada e te mata...");
                 fini();
+                exit(0);
+                break;
+        }
 
+        do{
+        ini();
+        printf("||\t\t\tO que decide fazer?\n");
+        printf("||\t1 - Tentar falar com o cara cortando a lenha.\n||\t2 - Andar um pouco pelo vilarejo.");
+        fini();
+        scanf(" %d", &opc);
+        system("pause");
+        system("cls");
+        }while(opc<1||opc>3);
+
+        switch(opc){
+                case 1 : 
+                //Falar com o lenhador.
+                ini();
+                printf("\t\tO lenhador se assuta com vc e no susto\n||\tEle te da uma maxadada na cabeca... vc morre.");
+                fini();
+                exit(0);
+                break;
+
+            case 2 : 
+                //Andar pela vila.
+                ini();
+                printf("||\t\tUm boi furioso aparece do nada e te mata...");
+                fini();
+                exit(0);
                 break;
         }
 }
