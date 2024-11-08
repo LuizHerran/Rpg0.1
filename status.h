@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int opc, opc2, opc3, hp=20, hpm=25, qmanga=0, xp=0, nvl=1, forc=5, qslot1=0, qslot2=0, qslot3=0, qslot4=0;
+int sor, opc, opc2, opc3, hp=20, hpm=25, qmanga=0, xp=0, nvl=1, forc=5, qslot1=0, qslot2=0, qslot3=0, qslot4=0;
 char nome[10], inv, slot1[]="Vazio", slot2[]="Vazio", slot3[]="Vazio", slot4[]="Vazio";
 
 void ini() {
@@ -11,7 +11,8 @@ void ini() {
 
 int sorte(){
     srand(time(NULL));
-    return rand()%10;
+    sor=rand()%10;
+    return sor;
 }
 
 int vida(){
