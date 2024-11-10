@@ -25,7 +25,7 @@ void mato(){
     printf("\n||\t\t1 - Levantar e olhar ao redor.");
     printf("\n||\t\t2 - Continar deitado.");
     printf("\n||");
-    printf("\n||  %d Hp\t%d Nivel", vida(), nivel());
+    printf("\n||  %d Hp\t%d Nivel", hp, nvl);
     printf("\n\\\\===============================================================//");
     scanf("%d", &opc);
     system("cls");
@@ -45,7 +45,7 @@ void mato(){
         printf("\n||");
         printf("\n||\t1 - Levantar e olhar ao redor.");
         printf("\n||");
-        printf("\n||  %d Hp", vida());
+        printf("\n||  %d Hp\t %d Nivel", hp, nvl);
         printf("\n\\\\===============================================================//");
         scanf("%d", &opc);
         system("cls");
@@ -60,7 +60,7 @@ void mato(){
     printf("\n||\t\t2 - Tentar passar pela mata e chegar na cidade.");
     printf("\n||\t\t3 - Olhar mais ao redor.");
     printf("\n||");
-    printf("\n||  %d Hp\t%d Nivel", vida(), nivel());
+    printf("\n||  %d Hp\t%d Nivel", hp, nvl);
     printf("\n\\\\===============================================================//\n");
     scanf("%d", &opc);
     system("cls");
@@ -76,11 +76,12 @@ void mato(){
             printf("\n||\t\t2 - Tentar passar pela mata e chegar na cidade.");
             printf("\n||\t\t3 - Olhar mais ao redor.");
             printf("\n||");
-            printf("\n||  %d Hp\t%d Nivel", vida(hp+1), nivel(xp+5));
+            printf("\n||  %d Hp\t%d Nivel", hp+=1, nvl);
             printf("\n\\\\===============================================================//\n");
             scanf("%d", &opc2);
             system("cls");
             }while(opc2<1||opc2>3);
+            nivel(xp+=5);
 
             switch(opc2){
                 case 1 : 
@@ -90,13 +91,13 @@ void mato(){
                     printf("||\n");
                     printf("||\t\tUma manga cai do seu lado, ela parece apetitosa,\n||\t\tvoce pega ela e resolve guarda-la.");
                     printf("\n||");
-                    printf("\n||  %d Hp\t%d Nivel", vida(), nivel(xp+10));
+                    printf("\n||  %d Hp\t%d Nivel", hp, nvl);
                     printf("\n\\\\===============================================================//\n");
                     system("pause");
                     system("cls");
                     inventario(1, "Manga", 0, "Vazio", 0, "Vazio", 0, "Vazio");
                     qslot1=1;
-                    system("pause");
+                    nivel(xp+=10);
 
                     do{
                     ini();
@@ -106,7 +107,7 @@ void mato(){
                     printf("\n||\t\t1 - Tentar passar pela mata e chegar na cidade.");
                     printf("\n||\t\t2 - Olhar mais ao redor.");
                     printf("\n||");
-                    printf("\n||  %d Hp\t%d Nivel", vida(), nivel());
+                    printf("\n||  %d Hp\t%d Nivel", hp, nvl);
                     printf("\n\\\\===============================================================//\n");
                     scanf("%d", &opc3);
                     system("cls");
@@ -158,7 +159,7 @@ void mato(){
                 printf("\n||\t\t1 - Ir ate a arvore.");
                 printf("\n||\t\t2 - Tentar passar pela mata e chegar na cidade.");
                 printf("\n||");
-                printf("\n||  %d Hp\t%d Nivel", vida(), nivel());
+                printf("\n||  %d Hp\t%d Nivel", hp, nvl);
                 printf("\n\\\\===============================================================//\n");
                 scanf("%d", &opc3);
                 system("cls");
@@ -173,11 +174,12 @@ void mato(){
                         printf("\n||\t\t1 - Se sentar aos pes da arvore");
                         printf("\n||\t\t2 - Tentar passar pela mata e chegar na cidade.");
                         printf("\n||");
-                        printf("\n||  %d Hp\t%d Nivel", vida(hp+1), nivel(xp+5));
+                        printf("\n||  %d Hp\t%d Nivel", hp+=1, nvl);
                         printf("\n\\\\===============================================================//\n");
                         scanf("%d", &opc2);
                         system("cls");
                         }while(opc2<1||opc2>3);
+                        nivel(xp+5);
 
                         switch(opc2){
                             //  Se senta aos pes da arvore
@@ -188,11 +190,12 @@ void mato(){
                                 printf("||\n");
                                 printf("||\t\tUma manga cai do seu lado, ela parece apetitosa,\n||\t\tvoce pega ela e resolve guarda-la.");
                                 printf("\n||");
-                                printf("\n||  %d Hp\t%d Nivel", vida(), nivel(xp+10));
+                                printf("\n||  %d Hp\t%d Nivel", hp, nvl);
                                 printf("\n\\\\===============================================================//\n");
                                 system("pause");
                                 system("cls");
                                 inventario(1, "Manga", 0, "Vazio", 0, "Vazio", 0, "Vazio");
+                                nivel(xp+10);
                                 
                                 do{
                                     ini();
@@ -202,7 +205,7 @@ void mato(){
                                     printf("\n||\t\t1 - Tentar passar pela mata e chegar na cidade.");
                                     printf("\n||\t\t2 - Olhar mais ao redor.");
                                     printf("\n||");
-                                    printf("\n||  %d Hp\n|| %d Nivel", vida(), nivel());
+                                    printf("\n||  %d Hp\n|| %d Nivel", hp, nvl);
                                     printf("\n\\\\===============================================================//\n");
                                     scanf("%d", &opc3);
                                     system("cls");
@@ -257,7 +260,7 @@ void floresta(){
     printf("\n||\t2 - Correr na direcao do barulho");
     printf("\n||\t3 - Apenas correr em desespero!");
     printf("\n||");
-    printf("\n||  %d Hp\n|| %d Nivel", vida(), nivel());
+    printf("\n||  %d Hp\n|| %d Nivel", hp, nvl);
     printf("\n\\\\===============================================================//\n");
     scanf("%d", &opc);
     system("cls");
@@ -280,7 +283,7 @@ void floresta(){
             printf("\n||\t2 - Tentar correr");
             printf("\n||\t3 - Tentar lutar com a cobra");
             printf("\n||");
-            printf("\n||  %d Hp\n|| %d Nivel", vida(), nivel());
+            printf("\n||  %d Hp\n|| %d Nivel", hp, nvl);
             printf("\n\\\\===============================================================//\n");
             scanf("%d", &opc2);
             system("cls");
@@ -296,10 +299,11 @@ void floresta(){
                 printf("||\t\tVoce aceta a manga na cabeca dela!");
                 printf("\n||\tParabens voce acaba de deixar ela com muuuito\n||\t\t\tmais raiva!");
                 printf("\n||");
-                printf("\n||  %d Hp\n|| %d Nivel", vida(), nivel(xp+5));
+                printf("\n||  %d Hp\n|| %d Nivel", hp, nvl);
                 printf("\n\\\\===============================================================//\n");
                 system("pause");
                 system("cls");
+                nivel(xp+10);
 
                 ini();
                 printf("||\t\t\tCara era uma manga!");
@@ -322,11 +326,10 @@ void floresta(){
                 printf("\n||\t\tC levou uma bela de uma picada :]");
                 printf("\n||");
                 printf("\n||\t\t\t-10 de vida..");
-                printf("\n||  %d Hp\n|| %d Nivel", vida(hp-10), nivel());
+                printf("\n||  %d Hp\n|| %d Nivel", hp-=10, nvl);
                 printf("\n\\\\===============================================================//\n");
                 inventario(0, "Vazio", 0, "Vazio", 0, "Vazio", 0, "Vazio");
-                system("pause");
-                system("cls");
+                vida(hp);
 
                 do{
                 ini();
@@ -335,7 +338,7 @@ void floresta(){
                 printf("\n||\t1 - Tentar tirar a cobra de sua perna.");
                 printf("\n||\t2 - Procurar algo ao redor");
                 printf("\n||");
-                printf("\n||  %d Hp\n|| %d Nivel", vida(), nivel());
+                printf("\n||  %d Hp\n|| %d Nivel", hp, nvl);
                 printf("\n\\\\===============================================================//\n");
                 scanf("%d", &opc3);
                 system("cls");
@@ -369,15 +372,16 @@ void floresta(){
                         printf("\n||");
                         printf("\n||\t\t\tConsegue se soltar da cobra\n||\t\te quebra o pau velho matando a cobra");
                         printf("\n||");
-                        printf("\n||  %d Hp\n|| %d Nivel", vida(), nivel(xp+=100));
+                        printf("\n||  %d Hp\n|| %d Nivel", hp, nvl);
                         printf("\n\\\\===============================================================//\n");
                         system("pause");
                         system("cls");
+                        nivel(xp+=100);
 
                         ini();
                         printf("||\t\t\tVoce corre na direcao da cidade");
                         printf("\n||");
-                        printf("\n||  %d Hp\n|| %d Nivel", vida(), nivel());
+                        printf("\n||  %d Hp\n|| %d Nivel", hp, nvl);
                         printf("\n\\\\===============================================================//\n");
                         system("pause");
                         system("cls");
@@ -431,12 +435,14 @@ void floresta(){
                 else {
                     //Vc mata a cobra.
                 ini();
-                printf("||\t\t\tCom muito esforco vc consegue esganar a cobra\n||\t\tVoce vence a luta mas nao sai ileso, vc perdeu 7 de HP");
+                printf("||\t\tCom muito esforco vc consegue esganar a cobra\n||\tVoce vence a luta mas nao sai ileso, vc perdeu 7 de HP");
                 printf("\n||");
-                printf("\n||  %d Hp\n|| %d Nivel", vida(hp-7), nivel(xp+100));
+                printf("\n||  %d Hp\n|| %d Nivel", hp-=7, nvl);
                 printf("\n\\\\===============================================================//\n");
                 system("pause");
                 system("cls");
+                vida(hp);
+                nivel(xp+100);
 
                 ini();
                 printf("||\t\t\tVoce segue em rumo a cidade");
@@ -453,7 +459,7 @@ void floresta(){
                 printf("\n||\t1 - Tentar correr");
                 printf("\n||\t2 - Tentar lutar com a cobra");
                 printf("\n||");
-                printf("\n||  %d Hp\n|| %d Nivel", vida(), nivel());
+                printf("\n||  %d Hp\n|| %d Nivel", hp, nvl);
                 printf("\n\\\\===============================================================//\n");
                 scanf("%d", &opc2);
                 system("cls");
@@ -494,18 +500,20 @@ void floresta(){
                         else {
                             //Vc mata a cobra.
                             ini();
-                            printf("||\t\t\tCom muito esforco vc consegue esganar a cobra\n||\t\tVoce vence a luta mas nao sai ileso, vc perdeu 7 de HP");
+                            printf("||\t\tCom muito esforco vc consegue esganar a cobra\n||\tVoce vence a luta mas nao sai ileso, vc perdeu 7 de HP");
                             printf("\n||");
-                            printf("\n||  %d Hp\n|| %d Nivel", vida(hp-7), nivel(xp+100));
+                            printf("\n||  %d Hp\n|| %d Nivel", hp-=7, nvl);
                             printf("\n\\\\===============================================================//\n");
                             system("pause");
                             system("cls");
+                            vida(hp);
+                            nivel(xp+100);
 
                             ini();
                             printf("||\t\t\tVoce segue em rumo a cidade");
                             fini();
                             break;
-                        }
+                        }     
                         }
             }
         }
@@ -519,7 +527,7 @@ void floresta(){
         fini();
         break;
         }
-
+        break;
         case 2 : 
         // Voce corre na direação da cobra
         ini();
@@ -539,15 +547,13 @@ void floresta(){
         exit(0);
         break;
         
-
         case 3 : {
+            // Vc corre no desespero e consegue sair na vila.
         ini();
-        printf("||\t\t\tCom sorte vc consegue correr loucamente.\n||\t\t\t\te sai da floresta");
+        printf("||\t\tCom sorte vc consegue correr loucamente.\n||\t\t\te sai da floresta");
         fini();
         break;
         }
-
-
     }
 }
 
@@ -561,7 +567,7 @@ void cidade(){
         fini();
 
         ini();
-        printf("||\t\tVoce percebe umas criancas te olhando e cochichando\n||\tAs pessoas pareciam muito ocupadas para se importarem\n||\n||\t\t\tcom sua presenca.");
+        printf("||\tVoce percebe umas criancas te olhando e cochichando\n||\tAs pessoas pareciam muito ocupadas para se importarem\n||\n||\t\t\tcom sua presenca.");
         fini();
         
         do{
@@ -582,7 +588,7 @@ void cidade(){
                     printf("||\t\tAs criancas comecam a cochichar entre si\n||\t\tvc sente que elas estao te ignorando.\n");
                     printf("||\t1 - 'Ola'\n||\t2 - O que os fedelhos estao fazendo?");
                     printf("\n||");
-                    printf("\n||  %d Hp\n|| %d Nivel", vida(), nivel());
+                    printf("\n||  %d Hp\n|| %d Nivel", hp, nvl);
                     printf("\n\\\\===============================================================//\n");
                     scanf("%d", &opc);
                     system("pause");
@@ -599,7 +605,7 @@ void cidade(){
                         printf("\t2 - Do que estao brincando?\n||");
                         printf("\t3 - Olhar ao redor.");
                         printf("\n||");
-                        printf("\n||  %d Hp\n|| %d Nivel", vida(), nivel());
+                        printf("\n||  %d Hp\n|| %d Nivel", hp, nvl);
                         printf("\n\\\\===============================================================//\n");
                         scanf("%d", &opc2);
                         system("pause");
@@ -636,7 +642,7 @@ void cidade(){
                                     printf("||\t1 - perguntar novamente 'Ola!?'\n");
                                     printf("||\t2 - Do que estao brincando?\n||");
                                     printf("\n||");
-                                    printf("\n||  %d Hp\t%d Nivel", vida(), nivel());
+                                    printf("\n||  %d Hp\t%d Nivel", hp, nvl);
                                     printf("\n\\\\===============================================================//\n");
                                     scanf("%d", &opc3);
                                     system("pause");
@@ -718,15 +724,15 @@ void cidade(){
         printf("||\t1 - Tentar falar com o cara cortando a lenha.\n||\t2 - Andar um pouco pelo vilarejo.");
         fini();
         scanf(" %d", &opc);
+        }while(opc<1||opc>3);
         system("pause");
         system("cls");
-        }while(opc<1||opc>3);
 
         switch(opc){
                 case 1 : 
                 //Falar com o lenhador.
                 ini();
-                printf("\t\tO lenhador se assuta com vc e no susto\n||\tEle te da uma maxadada na cabeca... vc morre.");
+                printf("||\t\tO lenhador se assuta com vc e no susto\n||\tEle te da uma maxadada na cabeca... vc morre.");
                 fini();
                 exit(0);
                 break;
