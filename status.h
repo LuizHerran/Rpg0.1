@@ -5,8 +5,27 @@
 int sor, opc, opc2, opc3, hp=20, qmanga=0, xp=0, nvl=1, forc=5, qslot1=0, qslot2=0, qslot3=0, qslot4=0;
 char nome[10], inv, slot1[]="Vazio", slot2[]="Vazio", slot3[]="Vazio", slot4[]="Vazio";
 
+//                                      Hud de cima
+char inc[100]={201, 205, 205, 205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,
+205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,
+205,205,205,205,205,205,205,205,205,205,205,205, 187};
+//                                      Hud de baixo
+char bai[100]={200, 205, 205, 205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,
+205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,
+205,205,205,205,205,205,205,205,205,205,205,205, 188};
+
 void ini() {
-    printf("//===============================================================\\\\\n||\n");
+    for(int i=0; i<=66; i++){
+        printf("%c", inc[i]);
+    }
+    printf("\n");
+}
+
+void barr(){
+    printf("\n");
+    for(int i=0; i<=66; i++){
+        printf("%c", bai[i]);
+    }
 }
 
 int sorte(){
@@ -68,7 +87,12 @@ int nivel(int xp){
 }
 
 void fini(){ 
-    printf("\n||\n||  %d Hp\t %d Nivel\n\\\\===============================================================//\n", hp, nvl), system("pause"), system("cls");
+    printf("\n");
+    for(int i=0; i<=66; i++){
+        printf("%c", bai[i]);
+    }
+    printf("\n");
+    system("pause"), system("cls");
 }
 
 void inventario(int qslot1, const char *slot1, int qslot2, const char *slot2, int qslot3, const char *slot3, int qslot4, const char *slot4){
