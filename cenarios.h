@@ -3,7 +3,6 @@
 void mato(){
 
     ini();
-    printf("%c\n", 186);
     printf("%c\t\t\t\t%s\n", 186, nome);
     printf("%c\n", 186);
     printf("%c\tApos se deitar para dormir em uma quarta-feira comum\n%c\tVoce acorda de um sonho extremamente realista...\n"

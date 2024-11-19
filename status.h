@@ -19,11 +19,11 @@ void ini() {
     for(int i=0; i<=66; i++){
         printf("%c", inc[i]);
     }
-    printf("\n");
+    printf("\n%c\n", 186);
 }
 
 void barr(){
-    printf("\n");
+    printf("\n%c\n",186);
     for(int i=0; i<=66; i++){
         printf("%c", bai[i]);
     }
@@ -110,7 +110,16 @@ void inventario(int qslot1, const char *slot1, int qslot2, const char *slot2, in
 }
 
 void textoreinicio(){
-    ini();
+
+        ini();
+        printf("%c\t\tDeseja recomecar ou fechar o jogo?\n",186);
+        printf("%c\n%c\t1 - Reiniciar.\t2 - Fechar jogo.", 186, 186);
+        barr();
+        scanf("%d", &opc);
+        if(opc==1){
+            
+        system("cls");
+        ini();
         printf("%c\n", 186);
         printf("%c\t\t\tTudo se apaga...\n", 186);
         printf("%c", 186);
@@ -128,4 +137,6 @@ void textoreinicio(){
         printf("%c", 186);
         fini();
         reiniciar=1;
+        }
+        else reiniciar=0;
 }
