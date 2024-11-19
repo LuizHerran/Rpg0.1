@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "setjmp.h"
 
-int sor, opc, opc2, opc3, hp=20, qmanga=0, xp=0, nvl=1, forc=5, qslot1=0, qslot2=0, qslot3=0, qslot4=0;
+int reiniciar=1, sor, opc, opc2, opc3, hp=20, qmanga=0, xp=0, nvl=1, forc=5, qslot1=0, qslot2=0, qslot3=0, qslot4=0;
 char nome[10], inv, slot1[]="Vazio", slot2[]="Vazio", slot3[]="Vazio", slot4[]="Vazio";
-
+jmp_buf inicio;
 //                                      Hud de cima
 char inc[100]={201, 205, 205, 205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,
 205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,
@@ -106,4 +107,25 @@ void inventario(int qslot1, const char *slot1, int qslot2, const char *slot2, in
     printf("\n\\\\===============================================================//\n\n");
     system("pause");
     system("cls");
+}
+
+void textoreinicio(){
+    ini();
+        printf("%c\n", 186);
+        printf("%c\t\t\tTudo se apaga...\n", 186);
+        printf("%c", 186);
+        fini();
+
+        ini();
+        printf("%c\n", 186);
+        printf("%c\t\t  Voce sente uma leve brisa\n", 186);
+        printf("%c", 186);
+        fini();
+        
+        ini();
+        printf("%c\n", 186);
+        printf("%c\t\t\tTudo se apaga...\n", 186);
+        printf("%c", 186);
+        fini();
+        reiniciar=1;
 }

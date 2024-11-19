@@ -1,18 +1,20 @@
 #include "status.h"
 
 void mato(){
-    //      Pegar nome do player
+
     ini();
     printf("%c\n", 186);
-    printf("%c\t\tDigite seu nome: ", 186);
-    scanf(" %s", nome);
-    printf("%c", 186);
+    printf("%c\t\t\t\t%s\n", 186, nome);
+    printf("%c\n", 186);
+    printf("%c\tApos se deitar para dormir em uma quarta-feira comum\n%c\tVoce acorda de um sonho extremamente realista...\n"
+    "%c\n%c\t\t\t   Mas espera...",186,186,186,186);
     fini();
 
     ini();
-    printf("%c\t\t\t\t%s\n", 186, nome);
-    printf("%c\tApos se deitar para dormir em uma quarta-feira comum\n%c\tVoce acorda em um sonho extremamente realista...\n" 
-    "%c\tVoce se ve deitado em uma floresta, sentindo a grama\n%c\t\t\tna sua pele.", 186, 186, 186, 186);
+    printf("%c\n%c", 186, 186);
+    printf("\t\t\tVoce nao esta em casa...\n");
+    printf("%c\tVoce se ve deitado em uma floresta, sentindo a grama\n%c\t\t\tna sua pele.\n", 186, 186);
+    printf("%c", 186);
     fini();
 
     ini();
@@ -364,7 +366,7 @@ void floresta(){
                         printf("%c\t\t\tVoce..\n%c\n", 186, 186);
                         printf("%c\t\tMORREU!!", 186);
                         fini();
-                        exit(0);
+                        longjmp(inicio, 1);
                         break;
                     
                     case 2 :
@@ -412,7 +414,7 @@ void floresta(){
                 ini();
                 printf("%c\t\tA cobra enorme se enrola rapidamente ao seu redor\n%c\t\t\tVc morre..", 186, 186);
                 fini();
-                exit(0);
+                longjmp(inicio, 1);
                 break;
             
             case 3 :
@@ -430,7 +432,7 @@ void floresta(){
                 ini();
                 printf("%c\t\t\tVOCE MORRE...", 186);
                 fini();
-                exit(0);
+                longjmp(inicio, 1);
                 break;
                 }
 
@@ -477,7 +479,7 @@ void floresta(){
                         ini();
                         printf("%c\t\tA cobra enorme se enrola rapidamente ao seu redor\n%c\t\t\tVc morre..", 186, 186);
                         fini();
-                        exit(0);
+                        longjmp(inicio, 1);
                         break;
 
                     case 2:
@@ -495,7 +497,7 @@ void floresta(){
                         ini();
                         printf("%c\t\t\tVOCE MORRE...", 186);
                         fini();
-                        exit(0);
+                        longjmp(inicio, 1);
                         break;
                         }
 
@@ -533,20 +535,20 @@ void floresta(){
         case 2 : 
         // Voce corre na direação da cobra
         ini();
-        printf("%c\t\t\tVoce corre na direcao do barulho..", 186);
+        printf("%c\t\t  Voce corre na direcao do barulho..", 186);
         fini();
 
         ini();
-        printf("%c\t\t\tUMA COBRA PULA NA SUA DIRECAO!", 186);
+        printf("%c\t\t  UMA COBRA PULA NA SUA DIRECAO!", 186);
         printf("\n%c", 186);
-        printf("\n%c\t\tEla morde o seu braco e comeca a se enrolar no seu corpo...", 186);
-        printf("\n%c\t\t\tVoce nao consegue fazer nada..", 186);
+        printf("\n%c\tEla morde o seu braco e comeca a se enrolar no seu corpo...", 186);
+        printf("\n%c\t\t  Voce nao consegue fazer nada..", 186);
         fini();
 
         ini();
         printf("%c\t\t\tVOCE MORRE...", 186);
         fini();
-        exit(0);
+        longjmp(inicio, 1);
         break;
         
         case 3 : {
@@ -699,7 +701,7 @@ void cidade(){
                         ini();
                         printf("%c\t\tVC E UMA PECIMA PESSOA. SAI DAQUI!", 186);
                         fini();
-                        exit(0);
+                        longjmp(inicio, 1);
                     break;
                 }
 
@@ -708,7 +710,7 @@ void cidade(){
                 ini();
                 printf("\t\tO lenhador se assuta com vc e no susto\n%c\tEle te da uma maxadada na cabeca... vc morre.", 186);
                 fini();
-                exit(0);
+                longjmp(inicio, 1);
                 break;
 
             case 3 : 
@@ -716,7 +718,7 @@ void cidade(){
                 ini();
                 printf("%c\t\tUm boi furioso aparece do nada e te mata...", 186);
                 fini();
-                exit(0);
+                longjmp(inicio, 1);
                 break;
         }
 
@@ -736,7 +738,7 @@ void cidade(){
                 ini();
                 printf("%c\t\tO lenhador se assuta com vc e no susto\n%c\tEle te da uma maxadada na cabeca... vc morre.", 186, 186);
                 fini();
-                exit(0);
+                longjmp(inicio, 1);
                 break;
 
             case 2 : 
@@ -744,7 +746,7 @@ void cidade(){
                 ini();
                 printf("%c\t\tUm boi furioso aparece do nada e te mata...", 186);
                 fini();
-                exit(0);
+                longjmp(inicio, 1);
                 break;
         }
 }

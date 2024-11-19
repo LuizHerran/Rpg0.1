@@ -1,13 +1,26 @@
 #include "cenarios.h"
 
-
 int main(){
-    //  INICIO DO GAME
+ 
+    ini();
+    printf("%c\n", 186);
+    printf("%c\t\t  Digite seu nome: ", 186);
+    scanf(" %s", nome);
+    printf("%c", 186);
+    fini();
+
+    while(reiniciar){
+    if (setjmp(inicio) == 0){
+
     mato();
 
-    //  VC CHEGA NA FLORESTA
     floresta();
 
-    //  FINALMENTE NA CIDADE!!!
     cidade();
+
+    } 
+    else {
+        textoreinicio();
+}
+}
 }
