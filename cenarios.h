@@ -727,7 +727,7 @@ void cidade(){
         printf("%c\t1 - Tentar falar com o cara cortando a lenha.\n%c\t2 - Andar um pouco pelo vilarejo.", 186, 186);
         printf("\n%c\n", 186);
         scanf(" %d", &opc);
-        }while(opc<1 || opc>3);
+        }while(opc<1 || opc>2);
         system("pause");
         system("cls");
 

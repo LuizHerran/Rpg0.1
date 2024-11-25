@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "setjmp.h"
+#include <setjmp.h>
 
 int reiniciar=1, sor, opc, opc2, opc3, hp=20, qmanga=0, xp=0, nvl=1, forc=5, qslot1=0, qslot2=0, qslot3=0, qslot4=0;
 char nome[10], inv, slot1[]="Vazio", slot2[]="Vazio", slot3[]="Vazio", slot4[]="Vazio";
@@ -42,7 +42,7 @@ int vida(int hp){
         printf("\\\\===========================================//\n");
         system("pause");
         system("cls");
-        exit(0);
+        longjmp(inicio, 1);
     }
     return hp;
 }
